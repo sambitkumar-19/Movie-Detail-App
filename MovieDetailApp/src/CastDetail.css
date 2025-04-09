@@ -1,0 +1,118 @@
+/* CastDetails Full Page Styling */
+.cast-details {
+    min-height: 100vh;
+    padding: 2rem;
+    background-color: #0d1117;
+    color: #e6edf3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.4s ease-in-out;
+    gap: 1rem;
+}
+
+/* Cast Name */
+.cast-details h1 {
+    font-size: 2.5rem;
+    color: #58a6ff;
+    margin-bottom: 1rem;
+}
+
+/* Cast Image */
+.cast-details img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Cast Bio */
+.cast-details p {
+    max-width: 800px;
+    text-align: center;
+    line-height: 1.6;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #c9d1d9;
+}
+
+/* Related Movies Section */
+.related-movies {
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.related-movies h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #58a6ff;
+    text-align: center;
+}
+
+/* Movie Cards Grid */
+.related-movies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+    padding: 0 1rem;
+}
+
+/* Individual Movie Card */
+.related-movie-card {
+    background-color: #161b22;
+    border-radius: 10px;
+    padding: 0.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    width: 140px;
+}
+
+.related-movie-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.related-movie-card p {
+    font-size: 0.9rem;
+    color: #e6edf3;
+}
+
+/* Hover Effects */
+.related-movie-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 6px 15px rgba(56, 139, 253, 0.4);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+    .cast-details {
+        padding: 1rem;
+    }
+
+    .related-movie-card {
+        width: 120px;
+    }
+
+    .cast-details img {
+        width: 160px;
+        height: 240px;
+    }
+}

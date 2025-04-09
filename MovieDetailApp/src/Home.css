@@ -1,0 +1,164 @@
+/* styles.css */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0d1117;
+    color: #e6edf3;
+    overflow-x: hidden;
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+}
+
+.home {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center;
+    justify-content: flex-start;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Search Box */
+.search-box {
+    width: 100%;
+    max-width: 500px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    background-color: #161b22;
+    color: #e6edf3;
+    box-shadow: 0 0 10px rgba(240, 246, 252, 0.1);
+    transition: all 0.3s ease;
+}
+
+.search-box:focus {
+    outline: none;
+    box-shadow: 0 0 12px rgba(56, 139, 253, 0.6);
+    background-color: #1f2937;
+}
+
+/* Movie Grid */
+.movie-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    flex: 1;
+    padding-bottom: 2rem;
+}
+
+/* Movie Card */
+.movie-card {
+    background-color: #161b22;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    animation: fadeUp 0.4s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(56, 139, 253, 0.3);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    border-bottom: 1px solid #30363d;
+}
+
+.movie-card .details {
+    padding: 1rem;
+}
+
+.movie-card .details h3 {
+    font-size: 1rem;
+    margin: 0 0 0.5rem;
+    color: #58a6ff;
+}
+
+.movie-card .details p {
+    font-size: 0.9rem;
+    color: #8b949e;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    gap: 1rem;
+}
+
+.pagination button {
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #238636;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.pagination button:disabled {
+    background-color: #30363d;
+    cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+    background-color: #2ea043;
+    transform: scale(1.05);
+}
+
+.pagination span {
+    font-size: 1rem;
+    color: #c9d1d9;
+}
+
+/* Error and loading */
+.error {
+    color: #ff6b6b;
+    margin-top: 1rem;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
